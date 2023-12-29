@@ -9,6 +9,9 @@ Total Hours: 8-9 Hours (Mostly re-learning VueJs)
 - npm run dev
 ```
 
+### Deployment URL
+https://zippy-faun-988a98.netlify.app
+
 ### Features
 - Loan List
 	- List
