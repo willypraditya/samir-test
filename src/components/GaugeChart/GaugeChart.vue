@@ -34,7 +34,7 @@ export default {
         circumference: 180,
         plugins: {
           legend: {
-            position: 'bottom',
+            position: 'bottom' as const,
             onClick: (e: any) => e.stopPropagation()
           }
         }

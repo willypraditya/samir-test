@@ -11,14 +11,14 @@ Total Hours: 8-9 Hours (Mostly re-learning VueJs)
 
 ### Features
 - Loan List
-		- List
-		- Search by Borrower Name
-		- Sort descending by Borrower / Term / Risk Rating 
+	- List
+	- Search by Borrower Name
+	- Sort descending by Borrower / Term / Risk Rating 
 - Loan Details
-		- Personal Info
-		- Loan Info
-		- Credit Score Gauge Graph (using Chart.js)
-		- Repayment Schedule
+	- Personal Info
+	- Loan Info
+	- Credit Score Gauge Graph (using Chart.js)
+	- Repayment Schedule
 
 ### Tech Stack
 - VueJs3
