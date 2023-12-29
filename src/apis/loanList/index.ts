@@ -15,15 +15,15 @@ const fetchLoanList = async ({ id, borrowerName, sortBy, page }: getLoanListProp
 
   if (id) {
     parsedData = {
-      ...data,
-      data: data.data.filter((item) => item.id === id)
+      ...parsedData,
+      data: parsedData.data.filter((item) => item.id === id)
     }
   }
 
   if (borrowerName) {
     parsedData = {
-      ...data,
-      data: data.data.filter((item) =>
+      ...parsedData,
+      data: parsedData.data.filter((item) =>
         item.borrower.name.toLocaleLowerCase().includes(borrowerName.toLocaleLowerCase())
       )
     }
@@ -32,22 +32,22 @@ const fetchLoanList = async ({ id, borrowerName, sortBy, page }: getLoanListProp
   if (sortBy) {
     if (sortBy === 'borrower') {
       parsedData = {
-        ...data,
-        data: data.data.sort((a, b) => a.borrower.name.localeCompare(b.borrower.name))
+        ...parsedData,
+        data: parsedData.data.sort((a, b) => a.borrower.name.localeCompare(b.borrower.name))
       }
     }
 
     if (sortBy === 'term') {
       parsedData = {
-        ...data,
-        data: data.data.sort((a, b) => b.term - a.term)
+        ...parsedData,
+        data: parsedData.data.sort((a, b) => b.term - a.term)
       }
     }
 
     if (sortBy === 'risk') {
       parsedData = {
-        ...data,
-        data: data.data.sort((a, b) => a.riskRating.localeCompare(b.riskRating))
+        ...parsedData,
+        data: parsedData.data.sort((a, b) => a.riskRating.localeCompare(b.riskRating))
       }
     }
   }
@@ -57,9 +57,9 @@ const fetchLoanList = async ({ id, borrowerName, sortBy, page }: getLoanListProp
   const endIndex = page * itemsPerPage
 
   parsedData = {
-    ...data,
-    data: [...data.data.slice(startIndex, endIndex)],
-    maxPage: Math.ceil(data.data.length / itemsPerPage) || 1
+    ...parsedData,
+    data: [...parsedData.data.slice(startIndex, endIndex)],
+    maxPage: Math.ceil(parsedData.data.length / itemsPerPage) || 1
   }
 
   return parsedData
