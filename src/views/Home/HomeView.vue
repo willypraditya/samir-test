@@ -42,7 +42,6 @@ export default {
       this.sortSelect = childSelectValue
     },
     handleChildPageChange(childPageValue: number) {
-      console.log('test', childPageValue)
       this.currentPage = childPageValue
     }
   }

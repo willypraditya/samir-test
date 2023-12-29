@@ -1,4 +1,6 @@
 <script lang="ts">
+import debounce from 'debounce'
+
 export default {
   data() {
     return {
@@ -7,8 +9,15 @@ export default {
     }
   },
   methods: {
-    emitInputEvent() {
+    debouncedEmitInputEvent: debounce(function (this: {
+      $emit: Function
+      childFilterInput: string
+    }) {
       this.$emit('child-input-change', this.childFilterInput)
+    }, 500),
+
+    emitInputEvent() {
+      this.debouncedEmitInputEvent()
     },
     emitSelectEvent() {
       this.$emit('child-select-change', this.childSortSelect)

@@ -17,8 +17,6 @@ export default {
 
     const creditScorePercentage = (creditScore / maxCreditScore) * 100
 
-    console.log(creditScore)
-
     return {
       chartData: {
         labels: [`Borrower Credit Score: ${creditScore} `, 'Maximum Credit Score: 850'],
